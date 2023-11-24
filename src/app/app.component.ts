@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { DrugAddEditComponent } from './drug-add-edit/drug-add-edit.component';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +9,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Farmacia-angular';
+  constructor(private _dialog: MatDialog) {}
+
+  openAddEditDrugForm() {
+    this._dialog.open(DrugAddEditComponent);
+  }
 }
